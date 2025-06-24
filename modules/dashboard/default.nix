@@ -8,7 +8,7 @@
         packages.enable = false;
         footer = [
           ""
-          "From niksingh710"
+          "onelock"
           ""
         ];
         mru.limit = 5;
