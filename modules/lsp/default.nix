@@ -36,9 +36,9 @@
   };
 
   diagnostic.settings = {
-    virtual_text = false;
-    underline = false;
-    signs = false;
+    virtual_text = true;
+    underline = true;
+    signs = true;
     severity_sort = false;
     float = {
       border = config.nvix.border;
