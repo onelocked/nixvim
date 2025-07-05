@@ -3,8 +3,8 @@
   plugins.lspsaga = {
     enable = true;
     lightbulb = {
-      enable = false;
-      virtualText = false;
+      enable = true;
+      virtualText = true;
     };
     outline.keys.jump = "<cr>";
     ui.border = config.nvix.border;
