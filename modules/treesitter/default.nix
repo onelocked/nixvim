@@ -13,6 +13,7 @@
         };
         auto_install = true;
         incremental_selection.enable = true;
+        ensureInstalled = [ "qmljs" ];
       };
     };
   };
