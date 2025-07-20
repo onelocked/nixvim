@@ -8,7 +8,7 @@ in
     (mkKeymap "n" "<c-a-j>" ":lua require('smart-splits').resize_down()<cr>" "Resize Down")
     (mkKeymap "n" "<c-a-k>" ":lua require('smart-splits').resize_up()<cr>" "Resize Up")
     (mkKeymap "n" "<c-a-l>" ":lua require('smart-splits').resize_right()<cr>" "Resize Right")
-    (mkKeymap "n" "?" (helpers.mkRaw # lua
+    (mkKeymap "n" "s" (helpers.mkRaw # lua
       ''
         function()
           require('flash').jump({
