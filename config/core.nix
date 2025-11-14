@@ -13,6 +13,6 @@
     self.nvixModules.aesthetics
     self.nvixModules.treesitter
     self.nvixModules.colorschemes
-    self.nvixModules.auto-session
+    # self.nvixModules.auto-session
   ];
 }

@@ -17,7 +17,7 @@
     dashboard = ./dashboard;
     aesthetics = ./aesthetics;
     treesitter = ./treesitter;
-    auto-session = ./auto-session;
+    # auto-session = ./auto-session;
     colorschemes = ./colorschemes;
   };
 }
