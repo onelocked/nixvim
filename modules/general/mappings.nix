@@ -39,6 +39,8 @@ let
 
   normal = [
     (mkKeymap "n" "<c-s>" "<cmd>w ++p<cr>" "Save the file")
+    (mkKeymap "n" "<leader>y" "<cmd>Yazi<cr>" "Open Yazi")
+
     (mkKeymap "n" "<c-a-=>" "<C-a>" "Increase Number")
     (mkKeymap "n" "<c-a-->" "<C-x>" "Decrease Number")
 

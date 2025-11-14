@@ -5,7 +5,10 @@
   ...
 }:
 {
-  extraPlugins = with pkgs.vimPlugins; [ stay-centered-nvim ];
+  extraPlugins = with pkgs.vimPlugins; [
+  stay-centered-nvim
+  yazi-nvim
+  ];
   plugins = {
     # Must have plugins to have a decent flow of work
     tmux-navigator.enable = true;
