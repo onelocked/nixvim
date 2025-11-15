@@ -38,71 +38,78 @@ in
       ];
       neo-tree = {
         enable = config.nvix.explorer.neo-tree;
-        usePopupsForInput = false;
-        popupBorderStyle = config.nvix.border;
-        sourceSelector.winbar = true;
-        extraSources = [ "document_symbols" ];
-        filesystem.followCurrentFile.enabled = true;
-        defaultComponentConfigs = {
-          gitStatus.symbols = with icons.git; {
-            unstaged = "${FileUnstaged}";
-            staged = "${FileStaged}";
-            renamed = "${FileRenamed}";
-            untracked = "${FileUntracked}";
-            deleted = "${FileDeleted}";
-            ignored = "${FileIgnored}";
+        settings = {
+          use_popups_for_input = false;
+          popup_border_style = config.nvix.border;
+          source_selector.winbar = true;
+          sources = [
+            "filesystem"
+            "buffers"
+            "git_status"
+            "document_symbols"
+          ];
+          filesystem.follow_current_file.enabled = true;
+          default_component_configs = {
+            git_status.symbols = with icons.git; {
+              unstaged = "${FileUnstaged}";
+              staged = "${FileStaged}";
+              renamed = "${FileRenamed}";
+              untracked = "${FileUntracked}";
+              deleted = "${FileDeleted}";
+              ignored = "${FileIgnored}";
+            };
           };
-        };
-        settings.window = {
-          position = "left";
-          mappings = {
-            "f" =
-              helpers.mkRaw # lua
-                ''
-                  function(state)
-                    local node = state.tree:get_node()
-                    local path = node:get_id()
-                    Snacks.picker.files({ cwd = path })
-                  end
-                '';
-            "/" =
-              helpers.mkRaw # lua
-                ''
-                  function(state)
-                    local node = state.tree:get_node()
-                    local path = node:get_id()
-                    Snacks.picker.grep({ cwd = path })
-                  end
-                '';
-            "s" = "open_split";
-            "v" = "open_vsplit";
-            "l" = "open_with_window_picker";
-            "h" =
-              helpers.mkRaw # lua
-                ''
-                  function(state)
-                    local node = state.tree:get_node()
-                    if node.type == 'directory' and node:is_expanded() then
-                      require'neo-tree.sources.filesystem'.toggle_directory(state, node)
-                    else
-                      require'neo-tree.ui.renderer'.focus_node(state, node:get_parent_id())
+          window = {
+            position = "left";
+            mappings = {
+              "f" =
+                helpers.mkRaw # lua
+                  ''
+                    function(state)
+                      local node = state.tree:get_node()
+                      local path = node:get_id()
+                      Snacks.picker.files({ cwd = path })
                     end
-                  end
-                '';
-            "<cr>" = "open_with_window_picker";
-            "<C-d>" = {
-              command = "scroll_preview";
-              config.direction = -10;
-            };
-            "<C-u>" = {
-              command = "scroll_preview";
-              config.direction = 10;
-            };
-            "<space>" = "none";
-            "K" = "focus_preview";
-            "P" = {
-              command = "toggle_preview";
-              config.use_float = true;
+                  '';
+              "/" =
+                helpers.mkRaw # lua
+                  ''
+                    function(state)
+                      local node = state.tree:get_node()
+                      local path = node:get_id()
+                      Snacks.picker.grep({ cwd = path })
+                    end
+                  '';
+              "s" = "open_split";
+              "v" = "open_vsplit";
+              "l" = "open_with_window_picker";
+              "h" =
+                helpers.mkRaw # lua
+                  ''
+                    function(state)
+                      local node = state.tree:get_node()
+                      if node.type == 'directory' and node:is_expanded() then
+                        require'neo-tree.sources.filesystem'.toggle_directory(state, node)
+                      else
+                        require'neo-tree.ui.renderer'.focus_node(state, node:get_parent_id())
+                      end
+                    end
+                  '';
+              "<cr>" = "open_with_window_picker";
+              "<C-d>" = {
+                command = "scroll_preview";
+                config.direction = -10;
+              };
+              "<C-u>" = {
+                command = "scroll_preview";
+                config.direction = 10;
+              };
+              "<space>" = "none";
+              "K" = "focus_preview";
+              "P" = {
+                command = "toggle_preview";
+                config.use_float = true;
+              };
             };
           };
         };

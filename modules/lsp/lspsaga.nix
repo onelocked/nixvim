@@ -2,15 +2,17 @@
 {
   plugins.lspsaga = {
     enable = true;
-    lightbulb = {
-      enable = false;
-      virtualText = false;
-    };
-    outline.keys.jump = "<cr>";
-    ui.border = config.nvix.border;
-    scrollPreview = {
-      scrollDown = "<c-d>";
-      scrollUp = "<c-u>";
+    settings = {
+      lightbulb = {
+        enable = false;
+        virtual_text = false;
+      };
+      outline.keys.jump = "<cr>";
+      ui.border = config.nvix.border;
+      scroll_preview = {
+        scroll_down = "<c-d>";
+        scroll_up = "<c-u>";
+      };
     };
   };
 }
