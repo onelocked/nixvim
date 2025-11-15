@@ -53,7 +53,7 @@ in
             ignored = "${FileIgnored}";
           };
         };
-        window = {
+        settings.window = {
           position = "left";
           mappings = {
             "f" =

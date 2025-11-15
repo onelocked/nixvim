@@ -1,10 +1,10 @@
 {pkgs, ...}: {
   plugins.lsp.servers.nixd = {
     enable = true;
-    settings.formatting.command = ["alejandra"];
+    settings.formatting.command = ["nixfmt"];
   };
 
   extraPackages = with pkgs; [
-    alejandra
+    nixfmt
   ];
 }

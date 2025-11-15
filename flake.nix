@@ -50,12 +50,12 @@
       perSystem =
         { pkgs, config, ... }:
         {
-          pre-commit.settings.hooks.nixfmt-rfc-style.enable = true;
+          pre-commit.settings.hooks.nixfmt.enable = true;
           devShells.default = pkgs.mkShell {
             name = "nvix";
             packages = with pkgs; [
               nixd
-              nixfmt-rfc-style
+              nixfmt
             ];
             shellHook = ''
               ${config.pre-commit.installationScript}
