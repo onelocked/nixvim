@@ -143,11 +143,6 @@ in
       "true"
     ])
     (wKeyObj [
-      "<leader>q"
-      ""
-      "quit/session"
-    ])
-    (wKeyObj [
       "z"
       ""
       "fold"

@@ -2,14 +2,6 @@
 
 This file contains a list of all the keybindings defined in your Nixvim configuration.
 
-## Auto Session
-
-- **Space + q .** (Normal): Last Session
-- **Space + q l** (Normal): List Session
-- **Space + q d** (Normal): Delete Session
-- **Space + q s** (Normal): Save Session
-- **Space + q D** (Normal): Purge Orphaned Sessions
-
 ## Buffer
 
 - **Space + b .** (Normal): Add File to Harpoon
