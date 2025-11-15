@@ -4,7 +4,7 @@
 
     git = ./git;
     lsp = ./lsp;
-    cmp = ./cmp;
+    blink-cmp = ./blink-cmp;
     tex = ./tex;
     lang = ./lang;
     snacks = ./snacks;

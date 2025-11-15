@@ -4,7 +4,7 @@
     ./bare.nix
     self.nvixModules.git
     self.nvixModules.lsp # Initializes LSP
-    self.nvixModules.cmp # Initializes LSP
+    self.nvixModules.blink-cmp # Initializes LSP
     self.nvixModules.lang # Language specific configurations
     #self.nvixModules.copilot
     self.nvixModules.lualine
