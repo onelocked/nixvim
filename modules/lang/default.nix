@@ -13,5 +13,5 @@ in
     require('img-clip').setup({})
   '';
   extraPlugins = with pkgs.vimPlugins; [ img-clip-nvim ];
-  extraPackages = with pkgs; if isDarwin then [ pngpaste ] else [ wl-clipboard ];
+  extraPackages = with pkgs; if isDarwin then [ pngpaste ] else [ wl-clipboard-rs ];
 }
